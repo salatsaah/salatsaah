@@ -4,16 +4,18 @@ This is a standalone static website. No build, installation, backend, analytics 
 
 ## Before uploading
 
-Review `PRIVACY_AUDIT.md`. The privacy page is explicitly a pre-release review copy: complete the support-mailbox routine below and confirm the intended audience, update the relevant passages and replace the review notice before using it as the final policy for Google Play/OAuth. A public draft is not verification-ready. Do not remove uncertainty labels without resolving the underlying questions.
+Review `PRIVACY_AUDIT.md` and implement the support-mailbox routine below to honor the published retention commitment. The developer has confirmed Calendar-only data use and a general audience, not specifically children. The public policy no longer contains internal review notices. Content preparation does not establish live accessibility or Google verification.
+
+For this update, upload `index.html` and `privacy.html` again. If deployment/audit notes are kept in the repository, update `DEPLOY.md` and `PRIVACY_AUDIT.md` too. CSS, icon and `.nojekyll` are unchanged.
 
 ## Upload and enable Pages
 
 1. Sign in to your GitHub account. Create a **public** repository named `salatsaah` (public repositories support Pages on GitHub Free). If it already exists, inspect its contents before replacing anything.
 2. Upload the **contents** of `salatsaah-website`, not the enclosing folder, to the repository's `main` branch. `index.html` and `privacy.html` must be at the repository root; keep `assets/` alongside them. Include `.nojekyll` (a dotfile, sometimes hidden). The Markdown documents are safe deployment notes, but only the HTML, CSS, icon and `.nojekyll` are needed to serve the site. Do not upload any of the Android project or parent folder.
 3. In **Settings → Pages → Build and deployment**, select **Deploy from a branch**, then **main** and **/ (root)**. Save. Do not set a custom domain.
-4. Wait for GitHub's Pages deployment to finish. Replace `YOUR-USERNAME` below with the actual repository owner. Open both URLs in a signed-out/private browser:
-   - `https://YOUR-USERNAME.github.io/salatsaah/`
-   - `https://YOUR-USERNAME.github.io/salatsaah/privacy.html`
+4. Wait for GitHub's Pages deployment to finish. Open both URLs in a signed-out/private browser:
+   - `https://salatsaah.github.io/salatsaah/`
+   - `https://salatsaah.github.io/salatsaah/privacy.html`
 5. Confirm both return public pages without login, the icon/styles load, and the homepage Privacy link works. Check a phone-sized viewport. There is intentionally no store-download link until the app is published.
 
 [GitHub's publishing-source instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
@@ -24,9 +26,9 @@ After the policy blockers are resolved and the pages are public, select the exis
 
 ## Attempt Search Console ownership verification
 
-1. Use the Google account that owns or edits the OAuth project. In [Google Search Console](https://search.google.com/search-console), add a **URL-prefix** property for `https://YOUR-USERNAME.github.io/salatsaah/`.
+1. Use the Google account that owns or edits the OAuth project. In [Google Search Console](https://search.google.com/search-console), add a **URL-prefix** property for `https://salatsaah.github.io/salatsaah/`.
 2. Select HTML-file verification if offered. Download Google's exact verification file and upload it to the `salatsaah` repository root unchanged. After Pages deploys, check its exact required URL is publicly accessible, then click Verify. Alternatively use the supplied HTML meta tag in the homepage `<head>` if that method is offered. No tracking script is needed. Keep the verification file/tag after verification.
-3. Follow the precise URL Search Console requests. If it requests a file at `https://YOUR-USERNAME.github.io/` rather than under `/salatsaah/`, the project repository cannot supply that root path. Do not claim success; an account-level Pages site or another supported method would be a separate setup decision.
+3. Follow the precise URL Search Console requests. If it requests a file at `https://salatsaah.github.io/` rather than under `/salatsaah/`, the project repository cannot supply that root path. Do not claim success; an account-level Pages site or another supported method would be a separate setup decision.
 
 **Shared-domain limitation:** you control your Pages content, not the DNS for `github.io`. A DNS-based Domain property for `github.io` cannot be verified by uploading project files. A successful URL-prefix verification proves control of that URL prefix; it does not establish ownership of all `github.io`, guarantee acceptance of an OAuth authorized domain, or complete OAuth brand/scope verification. Use only the hostname/domain the Console actually accepts and that you can demonstrate control over. Do not enter a URL path as an authorized domain or claim ownership of `github.io`.
 
